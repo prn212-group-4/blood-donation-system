@@ -1,0 +1,12 @@
+D:\prn-project\BloodDonationSystem\BloodDonationSystem.Models\bin\Debug\net8.0\BloodDonationSystem.Models.deps.json
+D:\prn-project\BloodDonationSystem\BloodDonationSystem.Models\bin\Debug\net8.0\BloodDonationSystem.Models.dll
+D:\prn-project\BloodDonationSystem\BloodDonationSystem.Models\bin\Debug\net8.0\BloodDonationSystem.Models.pdb
+D:\prn-project\BloodDonationSystem\BloodDonationSystem.Models\obj\Debug\net8.0\BloodDonationSystem.Models.GeneratedMSBuildEditorConfig.editorconfig
+D:\prn-project\BloodDonationSystem\BloodDonationSystem.Models\obj\Debug\net8.0\BloodDonationSystem.Models.AssemblyInfoInputs.cache
+D:\prn-project\BloodDonationSystem\BloodDonationSystem.Models\obj\Debug\net8.0\BloodDonationSystem.Models.AssemblyInfo.cs
+D:\prn-project\BloodDonationSystem\BloodDonationSystem.Models\obj\Debug\net8.0\BloodDonationSystem.Models.csproj.CoreCompileInputs.cache
+D:\prn-project\BloodDonationSystem\BloodDonationSystem.Models\obj\Debug\net8.0\BloodDonationSystem.Models.sourcelink.json
+D:\prn-project\BloodDonationSystem\BloodDonationSystem.Models\obj\Debug\net8.0\BloodDonationSystem.Models.dll
+D:\prn-project\BloodDonationSystem\BloodDonationSystem.Models\obj\Debug\net8.0\refint\BloodDonationSystem.Models.dll
+D:\prn-project\BloodDonationSystem\BloodDonationSystem.Models\obj\Debug\net8.0\BloodDonationSystem.Models.pdb
+D:\prn-project\BloodDonationSystem\BloodDonationSystem.Models\obj\Debug\net8.0\ref\BloodDonationSystem.Models.dll
