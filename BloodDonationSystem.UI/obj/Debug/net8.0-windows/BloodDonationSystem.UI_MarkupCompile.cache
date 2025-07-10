@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP
 D:\prn-project\BloodDonationSystem\BloodDonationSystem.UI\App.xaml
-2-216653475
+4-1564942074
 
-5-997518083
+7-169175740
 232-358369822
-LoginWindow.xaml;MainWindow.xaml;
+LoginWindow.xaml;MainWindow.xaml;MemberWindow.xaml;StaffWindow.xaml;
 
 False
 

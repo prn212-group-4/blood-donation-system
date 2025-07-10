@@ -34,9 +34,24 @@ namespace BloodDonationSystem.UI
                 if (account != null)
                 {
                     MessageBox.Show($"Welcome, {account.Name}!", "Login Success", MessageBoxButton.OK, MessageBoxImage.Information);
-                    MainWindow mainWindow = new MainWindow();
-                    mainWindow.Show();
 
+                    // Chuyển cửa sổ theo Role
+                    Window nextWindow;
+
+                    switch (account.Role.ToLower())
+                    {
+                        case "staff":
+                            nextWindow = new StaffWindow();
+                            break;
+                        case "member":
+                            nextWindow = new MemberWindow();
+                            break;
+                        default:
+                            MessageBox.Show("Unknown role. Access denied.", "Login Failed", MessageBoxButton.OK, MessageBoxImage.Error);
+                            return;
+                    }
+
+                    nextWindow.Show();
                     this.Close();
                 }
                 else
