@@ -1,0 +1,33 @@
+﻿<Window x:Class="BloodDonationSystem.UI.StaffWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Staff Panel"
+        Height="700" Width="1000"
+        WindowStartupLocation="CenterScreen"
+        Background="#F5F5F5"
+        ResizeMode="CanResize">
+
+    <Grid>
+        <Border Background="White"
+                Margin="40"
+                CornerRadius="10"
+                Padding="40"
+                Effect="{DynamicResource DropShadow}">
+            <StackPanel>
+                <TextBlock Text="Staff Panel"
+                           FontSize="26" FontWeight="SemiBold"
+                           Foreground="#C62828" Margin="0 0 0 30"/>
+
+                <Button Content="➕ Create Blood Request"
+                        Height="50" Width="220"
+                        Background="#C62828"
+                        Foreground="White"
+                        FontWeight="Bold"
+                        FontSize="16"
+                        BorderThickness="0"
+                        Cursor="Hand"
+                        Click="CreateBloodRequest_Click"/>
+            </StackPanel>
+        </Border>
+    </Grid>
+</Window>
