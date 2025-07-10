@@ -35,7 +35,6 @@ namespace BloodDonationSystem.UI
                 {
                     MessageBox.Show($"Welcome, {account.Name}!", "Login Success", MessageBoxButton.OK, MessageBoxImage.Information);
 
-                    // Chuyển cửa sổ theo Role
                     Window nextWindow;
 
                     switch (account.Role.ToLower())
