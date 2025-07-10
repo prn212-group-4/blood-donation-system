@@ -72,3 +72,6 @@ D:\prn-project\BloodDonationSystem\BloodDonationSystem.UI\obj\Debug\net8.0-windo
 D:\prn-project\BloodDonationSystem\BloodDonationSystem.UI\obj\Debug\net8.0-windows\BloodDonationSystem.UI.pdb
 D:\prn-project\BloodDonationSystem\BloodDonationSystem.UI\obj\Debug\net8.0-windows\BloodDonationSystem.UI.genruntimeconfig.cache
 D:\prn-project\BloodDonationSystem\BloodDonationSystem.UI\obj\Debug\net8.0-windows\ref\BloodDonationSystem.UI.dll
+D:\prn-project\BloodDonationSystem\BloodDonationSystem.UI\obj\Debug\net8.0-windows\LoginWindow.baml
+D:\prn-project\BloodDonationSystem\BloodDonationSystem.UI\obj\Debug\net8.0-windows\LoginWindow.g.cs
+D:\prn-project\BloodDonationSystem\BloodDonationSystem.UI\obj\Debug\net8.0-windows\App.baml
