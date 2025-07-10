@@ -1,12 +1,17 @@
 ﻿using System.Windows;
+using BloodDonationSystem.Models.Entities;
 
 namespace BloodDonationSystem.UI
 {
     public partial class MemberWindow : Window
     {
-        public MemberWindow()
+        private readonly Account _currentMember;
+
+        public MemberWindow(Account member)
         {
             InitializeComponent();
+            _currentMember = member;
+            this.Title = $"Welcome, {_currentMember.Name ?? "Member"}";
         }
     }
 }

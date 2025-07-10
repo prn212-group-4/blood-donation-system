@@ -35,16 +35,15 @@ namespace BloodDonationSystem.UI
                 {
                     MessageBox.Show($"Welcome, {account.Name}!", "Login Success", MessageBoxButton.OK, MessageBoxImage.Information);
 
-                    // Chuyển cửa sổ theo Role
                     Window nextWindow;
 
                     switch (account.Role.ToLower())
                     {
                         case "staff":
-                            nextWindow = new StaffWindow();
+                            nextWindow = new StaffWindow(account);
                             break;
                         case "member":
-                            nextWindow = new MemberWindow();
+                            nextWindow = new MemberWindow(account);
                             break;
                         default:
                             MessageBox.Show("Unknown role. Access denied.", "Login Failed", MessageBoxButton.OK, MessageBoxImage.Error);
@@ -60,6 +59,7 @@ namespace BloodDonationSystem.UI
                 }
             }
         }
+
 
         private void RegisterText_MouseDown(object sender, MouseButtonEventArgs e)
         {
