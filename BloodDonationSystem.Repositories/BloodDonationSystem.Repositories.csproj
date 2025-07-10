@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\BloodDonationSystem.DAL\BloodDonationSystem.DAL.csproj" />
+  </ItemGroup>
+
 </Project>
