@@ -106,10 +106,40 @@ namespace BloodDonationSystem.UI
 
         private void ViewDetail_Click(object sender, RoutedEventArgs e)
         {
-            var button = sender as Button;
-            var appointmentId = button?.Tag;
-            MessageBox.Show($"Xem chi tiết lịch hẹn ID: {appointmentId}", "Chi tiết", MessageBoxButton.OK, MessageBoxImage.Information);
-            // TODO: Thay bằng navigation thực tế sau
+            if (sender is Button button && button.Tag is Guid appointmentId)
+            {
+                var appointment = _context.Appointments.FirstOrDefault(a => a.Id == appointmentId);
+                if (appointment == null)
+                {
+                    MessageBox.Show("❌ Không tìm thấy lịch hẹn!", "Lỗi", MessageBoxButton.OK, MessageBoxImage.Error);
+                    return;
+                }
+
+                Window windowToOpen = null!;
+
+                switch (appointment.StatusId)
+                {
+                    case 1: // On Process → Review
+                        windowToOpen = new StaffReview(appointmentId);
+                        break;
+                    case 2: // Checked In → Health Check
+                        windowToOpen = new StaffHealthCheck(appointmentId);
+                        break;
+                    case 3: // Donated → (Sau sẽ làm)
+                        MessageBox.Show("ℹ️ Lịch hẹn này đã được hiến máu. Chức năng đang phát triển!", "Thông báo");
+                        return;
+                    default:
+                        MessageBox.Show("⚠️ Trạng thái lịch hẹn không hợp lệ.", "Cảnh báo");
+                        return;
+                }
+
+                windowToOpen.ShowDialog();
+
+                AppointmentList.Children.Clear(); // Refresh UI sau khi xử lý
+                LoadAppointments();
+            }
         }
+
+
     }
 }

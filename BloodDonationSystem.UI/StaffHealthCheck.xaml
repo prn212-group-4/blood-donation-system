@@ -1,0 +1,56 @@
+﻿<Window x:Class="BloodDonationSystem.UI.StaffHealthCheck"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Health Check"
+        Height="700" Width="600"
+        WindowStartupLocation="CenterScreen"
+        Background="#F5F5F5">
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+        <StackPanel Margin="30" VerticalAlignment="Top">
+
+            <TextBlock Text="🩺 Health Check Form"
+                       FontSize="24"
+                       FontWeight="SemiBold"
+                       Foreground="#C62828"
+                       Margin="0 0 0 20"/>
+
+            <TextBlock Text="🌡 Nhiệt độ (°C)" />
+            <TextBox x:Name="TempBox" Margin="0 5 0 15" Height="30"/>
+
+            <TextBlock Text="⚖ Cân nặng (kg)" />
+            <TextBox x:Name="WeightBox" Margin="0 5 0 15" Height="30"/>
+
+            <TextBlock Text="🩸 Huyết áp trên (mmHg)" />
+            <TextBox x:Name="UpperBPBox" Margin="0 5 0 15" Height="30"/>
+
+            <TextBlock Text="🩸 Huyết áp dưới (mmHg)" />
+            <TextBox x:Name="LowerBPBox" Margin="0 5 0 15" Height="30"/>
+
+            <TextBlock Text="❤️ Nhịp tim (bpm)" />
+            <TextBox x:Name="HeartRateBox" Margin="0 5 0 15" Height="30"/>
+
+            <CheckBox x:Name="IsGoodHealthCheck" Content="✅ Đủ điều kiện hiến máu" Margin="0 5 0 15"/>
+
+            <TextBlock Text="📝 Ghi chú" />
+            <TextBox x:Name="NoteBox" Height="60" AcceptsReturn="True" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" />
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 30 0 0">
+                <Button Content="✅ Approve"
+                        Width="120" Height="40"
+                        Background="ForestGreen"
+                        Foreground="White"
+                        FontWeight="Bold"
+                        Margin="10"
+                        Click="Approve_Click"/>
+                <Button Content="❌ Reject"
+                        Width="120" Height="40"
+                        Background="Firebrick"
+                        Foreground="White"
+                        FontWeight="Bold"
+                        Margin="10"
+                        Click="Reject_Click"/>
+            </StackPanel>
+
+        </StackPanel>
+    </ScrollViewer>
+</Window>

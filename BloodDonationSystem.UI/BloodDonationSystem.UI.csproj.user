@@ -26,6 +26,12 @@
     <Compile Update="StaffAppointmentManagement.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="StaffHealthCheck.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="StaffReview.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="StaffReviewAnswer.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
