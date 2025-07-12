@@ -18,5 +18,12 @@ namespace BloodDonationSystem.UI
             var requestWindow = new CreateBloodRequest(_currentStaff);
             requestWindow.ShowDialog();
         }
+
+        private void ManageQuestion_Click(object sender, RoutedEventArgs e)
+        {
+            var questionWindow = new QuestionManagement();
+            questionWindow.Show();
+        }
+
     }
 }

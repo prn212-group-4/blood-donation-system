@@ -2,6 +2,9 @@
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup />
   <ItemGroup>
+    <Compile Update="AddQuestion.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="CreateBloodRequest.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -9,6 +12,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="MemberWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="QuestionManagement.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="StaffWindow.xaml.cs">

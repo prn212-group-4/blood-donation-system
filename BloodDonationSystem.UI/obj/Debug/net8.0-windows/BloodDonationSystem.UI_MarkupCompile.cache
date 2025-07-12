@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP
 D:\prn-project\BloodDonationSystem\BloodDonationSystem.UI\App.xaml
-61970883040
+8-1224383452
 
-91456261205
+11348217936
 232-358369822
-CreateBloodRequest.xaml;LoginWindow.xaml;MainWindow.xaml;MemberWindow.xaml;StaffWindow.xaml;ViewBloodRequest.xaml;
+AddQuestion.xaml;CreateBloodRequest.xaml;LoginWindow.xaml;MainWindow.xaml;MemberWindow.xaml;QuestionManagement.xaml;StaffWindow.xaml;ViewBloodRequest.xaml;
 
 False
 
