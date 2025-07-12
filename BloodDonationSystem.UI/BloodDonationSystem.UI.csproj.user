@@ -14,6 +14,9 @@
     <Compile Update="MemberAnswerQuestion.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="MemberAppointment.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="MemberWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -21,6 +24,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="StaffAppointmentManagement.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="StaffReviewAnswer.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="StaffWindow.xaml.cs">
