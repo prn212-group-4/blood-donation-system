@@ -1,0 +1,9 @@
+﻿<Window x:Class="BloodDonationSystem.UI.MemberAppointment"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Your Appointments" Height="600" Width="800"
+        WindowStartupLocation="CenterScreen" Background="#F5F5F5">
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+        <StackPanel x:Name="AppointmentList" Margin="20"/>
+    </ScrollViewer>
+</Window>

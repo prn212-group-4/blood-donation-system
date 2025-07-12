@@ -64,6 +64,44 @@
                         <SolidColorBrush Color="White"/>
                     </Button.Foreground>
                 </Button>
+                <!-- Nút View Appointment -->
+                <Button Content="View My Appointments"
+        Width="250"
+        Height="45"
+        Margin="0 0 0 10"
+        Click="ViewAppointmentButton_Click"
+        Cursor="Hand"
+        FontSize="16"
+        FontWeight="SemiBold">
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border Background="{TemplateBinding Background}"
+                    CornerRadius="8"
+                    Padding="10"
+                    SnapsToDevicePixels="True"
+                    Effect="{DynamicResource DropShadow}">
+                                <ContentPresenter HorizontalAlignment="Center"
+                                  VerticalAlignment="Center"
+                                  RecognizesAccessKey="True"/>
+                            </Border>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#B71C1C"/>
+                                </Trigger>
+                                <Trigger Property="IsPressed" Value="True">
+                                    <Setter Property="Background" Value="#9A0007"/>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Button.Template>
+                    <Button.Background>
+                        <SolidColorBrush Color="#C62828"/>
+                    </Button.Background>
+                    <Button.Foreground>
+                        <SolidColorBrush Color="White"/>
+                    </Button.Foreground>
+                </Button>
+
 
             </StackPanel>
         </Border>
