@@ -87,3 +87,5 @@ D:\prn-project\BloodDonationSystem\BloodDonationSystem.UI\obj\Debug\net8.0-windo
 D:\prn-project\BloodDonationSystem\BloodDonationSystem.UI\obj\Debug\net8.0-windows\QuestionManagement.baml
 D:\prn-project\BloodDonationSystem\BloodDonationSystem.UI\obj\Debug\net8.0-windows\AddQuestion.baml
 D:\prn-project\BloodDonationSystem\BloodDonationSystem.UI\obj\Debug\net8.0-windows\AddQuestion.g.cs
+D:\prn-project\BloodDonationSystem\BloodDonationSystem.UI\obj\Debug\net8.0-windows\MemberAnswerQuestion.baml
+D:\prn-project\BloodDonationSystem\BloodDonationSystem.UI\obj\Debug\net8.0-windows\MemberAnswerQuestion.g.cs

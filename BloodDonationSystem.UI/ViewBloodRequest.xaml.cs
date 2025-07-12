@@ -12,10 +12,12 @@ namespace BloodDonationSystem.UI
     public partial class ViewBloodRequest : Window
     {
         private readonly BloodDonationDbContext _context = new();
+        private readonly Account _currentMember;
 
-        public ViewBloodRequest()
+        public ViewBloodRequest(Account member)
         {
             InitializeComponent();
+            _currentMember = member;
             LoadRequests();
         }
 
@@ -126,8 +128,12 @@ namespace BloodDonationSystem.UI
         private void Apply_Click(object sender, RoutedEventArgs e)
         {
             var button = sender as Button;
-            var requestId = button?.Tag;
-            MessageBox.Show($"Bạn đã chọn tham gia yêu cầu có ID:\n{requestId}", "Apply", MessageBoxButton.OK, MessageBoxImage.Information);
+            if (button?.Tag is Guid requestId)
+            {
+                var answerWindow = new MemberAnswerQuestion(requestId, _currentMember.Id); // _currentMember cần được truyền từ bên ngoài
+                answerWindow.ShowDialog();
+            }
         }
+
     }
 }
