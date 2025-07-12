@@ -15,7 +15,6 @@ namespace BloodDonationSystem.Models.Entities
         public bool IsActive { get; set; }
         public DateTime CreatedAt { get; set; }
 
-        // Navigation properties
         public virtual Account? Staff { get; set; }
         public virtual RequestPriority? Priority { get; set; }
         public virtual ICollection<Appointment>? Appointments { get; set; }

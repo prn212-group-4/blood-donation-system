@@ -12,7 +12,6 @@
                 Effect="{DynamicResource DropShadow}">
             <StackPanel>
 
-                <!-- Tiêu đề -->
                 <StackPanel Margin="0 0 0 30">
                     <TextBlock FontSize="28" FontWeight="Bold" Foreground="#D32F2F">
                         🩸 Request Blood
@@ -23,7 +22,6 @@
                     </TextBlock>
                 </StackPanel>
 
-                <!-- Nội dung form -->
                 <Grid Margin="0 0 0 30">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*" />
@@ -31,13 +29,9 @@
                         <ColumnDefinition Width="*" />
                     </Grid.ColumnDefinitions>
 
-                    <!-- Left Column -->
                     <StackPanel Grid.Column="0">
-                        <!-- Title -->
                         <TextBlock Text="Title" FontWeight="SemiBold" FontSize="16"/>
                         <TextBox x:Name="TitleBox" Margin="0 8 0 20" FontSize="14" Padding="10"/>
-
-                        <!-- Blood Group -->
                         <TextBlock Text="Blood Group" FontWeight="SemiBold" FontSize="16"/>
                         <ComboBox x:Name="BloodGroupBox" Margin="0 8 0 20" FontSize="14" Padding="8">
                             <ComboBoxItem Content="O+" />
@@ -50,14 +44,11 @@
                             <ComboBoxItem Content="AB-" />
                         </ComboBox>
 
-                        <!-- Max People -->
                         <TextBlock Text="Max People" FontWeight="SemiBold" FontSize="16"/>
                         <TextBox x:Name="MaxPeopleBox" Margin="0 8 0 20" FontSize="14" Padding="10" Text="1"/>
                     </StackPanel>
 
-                    <!-- Right Column -->
                     <StackPanel Grid.Column="2">
-                        <!-- Priority -->
                         <TextBlock Text="Priority" FontWeight="SemiBold" FontSize="16"/>
                         <ComboBox x:Name="PriorityBox" Margin="0 8 0 20" FontSize="14" Padding="8">
                             <ComboBoxItem Content="Low" />
@@ -65,7 +56,6 @@
                             <ComboBoxItem Content="High" />
                         </ComboBox>
 
-                        <!-- Start Date -->
                         <TextBlock Text="Start Date" FontWeight="SemiBold" FontSize="16"/>
                         <StackPanel Orientation="Horizontal" Margin="0 8 0 20">
                             <DatePicker x:Name="StartDatePicker" Width="180" FontSize="14"/>
@@ -73,7 +63,6 @@
                                      FontSize="14" Text="10:00 AM" Padding="6"/>
                         </StackPanel>
 
-                        <!-- End Date -->
                         <TextBlock Text="End Date" FontWeight="SemiBold" FontSize="16"/>
                         <StackPanel Orientation="Horizontal" Margin="0 8 0 20">
                             <DatePicker x:Name="EndDatePicker" Width="180" FontSize="14"/>
@@ -83,7 +72,6 @@
                     </StackPanel>
                 </Grid>
 
-                <!-- Nút điều hướng -->
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
                     <Button Content="← Back"
                             Width="120" Height="40"

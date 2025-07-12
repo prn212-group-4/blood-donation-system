@@ -13,5 +13,11 @@ namespace BloodDonationSystem.UI
             _currentMember = member;
             this.Title = $"Welcome, {_currentMember.Name ?? "Member"}";
         }
+
+        private void ViewBloodRequestButton_Click(object sender, RoutedEventArgs e)
+        {
+            var viewWindow = new ViewBloodRequest();
+            viewWindow.ShowDialog();
+        }
     }
 }

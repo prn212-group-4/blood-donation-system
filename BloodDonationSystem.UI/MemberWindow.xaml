@@ -13,7 +13,7 @@
                 CornerRadius="10"
                 Padding="40"
                 Effect="{DynamicResource DropShadow}">
-            <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+            <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Width="400">
                 <TextBlock Text="Welcome to the Blood Donation System!"
                            FontSize="24"
                            FontWeight="SemiBold"
@@ -26,6 +26,45 @@
                            Foreground="#555"
                            TextAlignment="Center"
                            Margin="0 5"/>
+
+                <!-- Nút View Blood Request -->
+                <Button Content="View Blood Request"
+                        Width="250"
+                        Height="45"
+                        Margin="0 20"
+                        Click="ViewBloodRequestButton_Click"
+                        Cursor="Hand"
+                        FontSize="16"
+                        FontWeight="SemiBold">
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border Background="{TemplateBinding Background}"
+                                    CornerRadius="8"
+                                    Padding="10"
+                                    SnapsToDevicePixels="True"
+                                    Effect="{DynamicResource DropShadow}">
+                                <ContentPresenter HorizontalAlignment="Center"
+                                                  VerticalAlignment="Center"
+                                                  RecognizesAccessKey="True"/>
+                            </Border>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#B71C1C"/>
+                                </Trigger>
+                                <Trigger Property="IsPressed" Value="True">
+                                    <Setter Property="Background" Value="#9A0007"/>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Button.Template>
+                    <Button.Background>
+                        <SolidColorBrush Color="#C62828"/>
+                    </Button.Background>
+                    <Button.Foreground>
+                        <SolidColorBrush Color="White"/>
+                    </Button.Foreground>
+                </Button>
+
             </StackPanel>
         </Border>
     </Grid>

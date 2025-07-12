@@ -24,6 +24,5 @@ namespace BloodDonationSystem.Services
             _context.BloodRequests.Add(request);
             _context.SaveChanges();
         }
-
     }
 }
