@@ -24,6 +24,12 @@ namespace BloodDonationSystem.UI
             var questionWindow = new QuestionManagement();
             questionWindow.Show();
         }
+        private void ManageAppointment_Click(object sender, RoutedEventArgs e)
+        {
+            var window = new StaffAppointmentManagement();
+            window.ShowDialog();
+        }
+
 
     }
 }

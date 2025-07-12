@@ -20,6 +20,9 @@
     <Compile Update="QuestionManagement.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="StaffAppointmentManagement.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="StaffWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>

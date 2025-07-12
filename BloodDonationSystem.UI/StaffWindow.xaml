@@ -40,7 +40,7 @@
                         Click="ManageQuestion_Click"/>
 
                 <Button Content="📅 Appointment Management"
-                        Height="50" Width="220"
+                        Height="50" Width="250"
                         Background="#C62828"
                         Foreground="White"
                         FontWeight="Bold"
