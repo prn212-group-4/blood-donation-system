@@ -29,16 +29,12 @@ namespace BloodDonationSystem.UI
         {
             try
             {
-                System.Diagnostics.Debug.WriteLine("🚩 Bắt đầu xử lý SubmitRequest_Click");
                 string title = TitleBox.Text.Trim();
-                System.Diagnostics.Debug.WriteLine($"📌 Title: {title}");
                 if (string.IsNullOrWhiteSpace(title))
                 {
-                    MessageBox.Show("Please enter a title.");
                     return;
                 }
                 string? priorityText = ((ComboBoxItem)PriorityBox.SelectedItem)?.Content.ToString()?.ToLower();
-                System.Diagnostics.Debug.WriteLine($"📌 Priority: {priorityText}");
                 int priorityId = priorityText switch
                 {
                     "low" => 1,
@@ -48,15 +44,10 @@ namespace BloodDonationSystem.UI
                 };
 
                 int maxPeople = int.TryParse(MaxPeopleBox.Text, out int val) ? val : 1;
-                System.Diagnostics.Debug.WriteLine($"📌 MaxPeople: {maxPeople}");
                 DateTime startDateTime = CombineDateAndTime(StartDatePicker, StartTimeBox.Text);
                 DateTime endDateTime = CombineDateAndTime(EndDatePicker, EndTimeBox.Text);
-                System.Diagnostics.Debug.WriteLine($"📌 Time: {startDateTime} - {endDateTime}");
-
-
                 if (endDateTime <= startDateTime)
                 {
-                    MessageBox.Show("End time must be after start time.");
                     return;
                 }
 
@@ -79,13 +70,11 @@ namespace BloodDonationSystem.UI
                             _ => throw new Exception("Invalid blood group.")
                         };
                         selectedBloodGroupIds.Add(bloodGroupId);
-                        System.Diagnostics.Debug.WriteLine($"✅ Selected BloodGroup: {bloodGroupId}");
                     }
                 }
 
                 if (selectedBloodGroupIds.Count == 0)
                 {
-                    MessageBox.Show("Please select at least one blood group.");
                     return;
                 }
                 var requestId = Guid.NewGuid();
@@ -106,10 +95,7 @@ namespace BloodDonationSystem.UI
                         BloodGroupId = id
                     }).ToList()
                 };
-                System.Diagnostics.Debug.WriteLine("🧠 Đã tạo entity BloodRequest xong");
                 _service.CreateBloodRequest(bloodRequest);
-
-                MessageBox.Show("✅ Blood request created successfully.");
                 this.Close();
             }
             catch (Exception ex)
