@@ -1,0 +1,140 @@
+﻿<Window x:Class="BloodDonationSystem.UI.StaffDonated"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="StaffDonated" Height="900" Width="800"
+        WindowStartupLocation="CenterScreen"
+        Background="#F5F5F5">
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+        <StackPanel Margin="30">
+
+            <!-- Tiêu đề chính -->
+            <TextBlock Text="🩸 Create New Donation"
+                       FontSize="26"
+                       FontWeight="SemiBold"
+                       Foreground="#C62828"
+                       Margin="0 0 0 10"/>
+            <TextBlock Text="Select donation type and collection volume"
+                       FontSize="14"
+                       Foreground="#666"
+                       Margin="0 0 20 30"/>
+
+            <!-- Tiêu đề phụ -->
+            <TextBlock Text="Select Donation Type"
+                       FontSize="18"
+                       FontWeight="Bold"
+                       Margin="0 0 0 5"/>
+            <TextBlock Text="Choose the appropriate donation method based on patient needs"
+                       FontSize="14"
+                       Foreground="Gray"
+                       Margin="0 0 20 15"/>
+
+            <!-- Grid các loại hiến máu -->
+            <!-- Grid các loại hiến máu -->
+            <UniformGrid Columns="2" Rows="2" Margin="0 0 0 30">
+
+                <!-- Whole Blood -->
+                <Border x:Name="WholeBloodBorder" Tag="whole_blood" MouseLeftButtonDown="DonationType_Click"
+            Background="White" CornerRadius="10" Margin="10" Padding="15"
+            BorderBrush="#F44336" BorderThickness="2">
+                    <StackPanel>
+                        <TextBlock Text="❤️ Whole Blood" FontSize="16" FontWeight="Bold" Foreground="#F44336"/>
+                        <TextBlock Text="Standard blood donation" FontSize="13" Foreground="Gray"/>
+                        <TextBlock Text="🩸 450ml | ⏱ 10–15 min" FontSize="12" Foreground="#666" Margin="0 5 0 0"/>
+                    </StackPanel>
+                </Border>
+
+                <!-- Power Red -->
+                <Border x:Name="PowerRedBorder" Tag="power_red" MouseLeftButtonDown="DonationType_Click"
+            Background="White" CornerRadius="10" Margin="10" Padding="15"
+            BorderBrush="#FF5722" BorderThickness="2">
+                    <StackPanel>
+                        <TextBlock Text="⚡ Power Red" FontSize="16" FontWeight="Bold" Foreground="#FF5722"/>
+                        <TextBlock Text="Double red cell donation" FontSize="13" Foreground="Gray"/>
+                        <TextBlock Text="🩸 500ml | ⏱ 25–35 min" FontSize="12" Foreground="#666" Margin="0 5 0 0"/>
+                    </StackPanel>
+                </Border>
+
+                <!-- Platelet -->
+                <Border x:Name="PlateletBorder" Tag="platelet" MouseLeftButtonDown="DonationType_Click"
+            Background="White" CornerRadius="10" Margin="10" Padding="15"
+            BorderBrush="#FFC107" BorderThickness="2">
+                    <StackPanel>
+                        <TextBlock Text="✨ Platelet" FontSize="16" FontWeight="Bold" Foreground="#FFC107"/>
+                        <TextBlock Text="Platelet donation" FontSize="13" Foreground="Gray"/>
+                        <TextBlock Text="🩸 300ml | ⏱ 70–90 min" FontSize="12" Foreground="#666" Margin="0 5 0 0"/>
+                    </StackPanel>
+                </Border>
+
+                <!-- Plasma -->
+                <Border x:Name="PlasmaBorder" Tag="plasma" MouseLeftButtonDown="DonationType_Click"
+            Background="White" CornerRadius="10" Margin="10" Padding="15"
+            BorderBrush="#2196F3" BorderThickness="2">
+                    <StackPanel>
+                        <TextBlock Text="🧪 Plasma" FontSize="16" FontWeight="Bold" Foreground="#2196F3"/>
+                        <TextBlock Text="Plasma donation" FontSize="13" Foreground="Gray"/>
+                        <TextBlock Text="🩸 600ml | ⏱ 45–60 min" FontSize="12" Foreground="#666" Margin="0 5 0 0"/>
+                    </StackPanel>
+                </Border>
+            </UniformGrid>
+
+
+            <!-- Input số lượng thực tế -->
+            <TextBlock Text="Collection Amount"
+                       FontSize="18"
+                       FontWeight="Bold"
+                       Margin="0 0 0 5"/>
+            <TextBlock Text="Adjust the collection volume if needed"
+                       FontSize="13"
+                       Foreground="Gray"
+                       Margin="0 0 10 10"/>
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                <TextBox x:Name="VolumeBox"
+                         Width="100" Height="40"
+                         FontSize="16"
+                         TextAlignment="Center"
+                         Margin="0 0 10 0"/>
+                <TextBlock Text="ml"
+                           VerticalAlignment="Center"
+                           FontSize="16"
+                           FontWeight="Bold"
+                           Foreground="Gray"/>
+            </StackPanel>
+            <Button Content="➕ Add"
+                    Width="100" Height="40"
+                    Background="#0288D1"
+                    Foreground="White"
+                    FontWeight="Bold"
+                    Click="AddDonationItem_Click"
+                    Margin="0 10 0 0"/>
+
+            <ListBox x:Name="DonationListBox"
+                     Margin="0 20 0 0"
+                     Background="White"
+                     BorderBrush="#ccc"
+                     BorderThickness="1"
+                     Height="150">
+                        </ListBox>
+
+
+
+            <!-- Nút xác nhận -->
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 30 0 0">
+                <Button Content="✅ Submit Donation"
+                        Width="180" Height="45"
+                        Background="#2E7D32"
+                        Foreground="White"
+                        FontWeight="Bold"
+                        Click="Submit_Click"
+                        Margin="10"/>
+                <Button Content="❌ Cancel"
+                        Width="120" Height="45"
+                        Background="#B71C1C"
+                        Foreground="White"
+                        FontWeight="Bold"
+                        Click="Cancel_Click"
+                        Margin="10"/>
+            </StackPanel>
+        </StackPanel>
+    </ScrollViewer>
+</Window>
