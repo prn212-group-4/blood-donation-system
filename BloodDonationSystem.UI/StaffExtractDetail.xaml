@@ -1,0 +1,38 @@
+﻿<Window x:Class="BloodDonationSystem.UI.StaffExtractDetail"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Extract Blood Components"
+        Height="700" Width="800"
+        WindowStartupLocation="CenterScreen"
+        Background="#F5F5F5">
+    <Grid Margin="30">
+        <StackPanel>
+
+            <!-- Thông tin tổng quan -->
+            <TextBlock Text="🧾 Donation Record" FontSize="24" FontWeight="Bold" Margin="0 0 0 10"/>
+            <TextBlock x:Name="DonationInfoText" FontSize="14" Foreground="Gray" Margin="0 0 0 20"/>
+
+            <!-- Nhập thành phần -->
+            <GroupBox Header="Add New Component" FontWeight="Bold" Margin="0 0 0 20">
+                <StackPanel Orientation="Horizontal" Margin="10">
+                    <ComboBox x:Name="ComponentComboBox" Width="150" Margin="0 0 10 0"/>
+                    <TextBox x:Name="ComponentAmountBox" Width="80" Margin="0 0 10 0" />
+                    <Button Content="➕ Add Component" Click="AddComponent_Click" Background="#2E7D32" Foreground="White"/>
+                </StackPanel>
+            </GroupBox>
+
+            <!-- Danh sách thành phần đã thêm -->
+            <GroupBox Header="Added Components" FontWeight="Bold">
+                <StackPanel x:Name="AddedComponentsPanel" Margin="10"/>
+            </GroupBox>
+
+            <!-- Nút hoàn tất -->
+            <Button Content="✅ Complete Donation"
+                    HorizontalAlignment="Right"
+                    Width="200" Height="45" Margin="0 30 0 0"
+                    Click="Complete_Click"
+                    Background="#1565C0" Foreground="White" FontWeight="Bold"/>
+
+        </StackPanel>
+    </Grid>
+</Window>

@@ -126,8 +126,8 @@ namespace BloodDonationSystem.UI
                         windowToOpen = new StaffHealthCheck(appointmentId);
                         break;
                     case 3: // Donated → (Sau sẽ làm)
-                        MessageBox.Show("ℹ️ Lịch hẹn này đã được hiến máu. Chức năng đang phát triển!", "Thông báo");
-                        return;
+                       windowToOpen = new StaffDonated(appointmentId);
+                        break;
                     default:
                         MessageBox.Show("⚠️ Trạng thái lịch hẹn không hợp lệ.", "Cảnh báo");
                         return;
