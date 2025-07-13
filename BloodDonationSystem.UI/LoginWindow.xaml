@@ -1,33 +1,52 @@
 ﻿<Window x:Class="BloodDonationSystem.UI.LoginWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         Title="Login"
-        Height="600" Width="800"
+        Height="700" Width="800"
         WindowStartupLocation="CenterScreen"
         ResizeMode="NoResize"
-        Background="#F0F0F0">
-    
+        Background="#FFFAFAFA"
+        Loaded="Window_Loaded">
+
+    <Window.Resources>
+        <DropShadowEffect x:Key="DropShadow" BlurRadius="15" ShadowDepth="3" Color="#999"/>
+        <Storyboard x:Key="FadeInStoryboard">
+            <DoubleAnimation Storyboard.TargetProperty="Opacity"
+                             From="0" To="1" Duration="0:0:1" />
+        </Storyboard>
+    </Window.Resources>
+
     <Grid>
         <Border Width="540"
-                Height="520"
+                Height="580"
                 Background="White"
                 CornerRadius="15"
                 VerticalAlignment="Center"
                 HorizontalAlignment="Center"
                 Padding="30"
-                Effect="{DynamicResource DropShadow}">
-            <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                Effect="{StaticResource DropShadow}"
+                Opacity="0"
+                Name="MainPanel">
+            <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0 10">
+
+                <Viewbox Width="60" Height="60" HorizontalAlignment="Center" Margin="0 0 0 20">
+                    <Canvas Width="24" Height="24">
+                        <Path Fill="#C62828"
+                              Data="M12,2 C12,2 6,9.5 6,14 C6,17.31 8.69,20 12,20 C15.31,20 18,17.31 18,14 C18,9.5 12,2 12,2 Z" />
+                    </Canvas>
+                </Viewbox>
 
                 <TextBlock Text="BLOOD DONATION SYSTEM"
                            FontSize="30" FontWeight="SemiBold"
                            Foreground="#C62828" TextAlignment="Center"
                            HorizontalAlignment="Center"
-                           Margin="0 0 0 40"/>
+                           Margin="0 0 0 25"/>
 
-                <StackPanel Margin="0 15">
+                <StackPanel Margin="0 10">
                     <TextBlock Text="Email" FontSize="14" Foreground="#555" Margin="5 5"/>
                     <TextBox x:Name="EmailTextBox"
-                             Text="abc@gmail.com"
                              FontSize="14"
                              Foreground="Gray"
                              Padding="10"
@@ -37,8 +56,8 @@
                              LostFocus="EmailTextBox_LostFocus"/>
                 </StackPanel>
 
-                <StackPanel Margin="0 15">
-                    <TextBlock Text="Password" FontSize="12" Foreground="#555" Margin="5 5"/>
+                <StackPanel Margin="0 10">
+                    <TextBlock Text="Password" FontSize="14" Foreground="#555" Margin="5 5"/>
                     <PasswordBox x:Name="PasswordBox"
                                  FontSize="15"
                                  Padding="10"
@@ -50,17 +69,38 @@
                         Click="LoginButton_Click"
                         Background="#C62828" Foreground="White"
                         FontSize="14" FontWeight="Bold"
-                        Height="40" Margin="0 40 0 15"
+                        Height="40" Margin="0 30 0 20"
                         BorderThickness="0"
-                        Cursor="Hand" />
+                        Cursor="Hand">
+                    <Button.Style>
+                        <Style TargetType="Button" BasedOn="{StaticResource {x:Type Button}}">
+                            <Setter Property="RenderTransformOrigin" Value="0.5,0.5"/>
+                            <Setter Property="RenderTransform">
+                                <Setter.Value>
+                                    <ScaleTransform ScaleX="1" ScaleY="1"/>
+                                </Setter.Value>
+                            </Setter>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#E53935"/>
+                                    <Setter Property="RenderTransform">
+                                        <Setter.Value>
+                                            <ScaleTransform ScaleX="1.03" ScaleY="1.03"/>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                </Button>
 
-                <TextBlock Text="Don't have an account? Register here"
-                           FontSize="12"
-                           Foreground="#888"
-                           TextAlignment="Center"
-                           HorizontalAlignment="Center"
-                           Cursor="Hand"
-                           MouseDown="RegisterText_MouseDown"/>
+                <TextBlock FontSize="12" Foreground="#666" HorizontalAlignment="Center" Margin="0 5 0 0">
+                    <Run Text="Don't have an account? " />
+                    <Hyperlink Click="RegisterLink_Click" Foreground="#C62828" Cursor="Hand">
+                        <Run Text="Register now" />
+                    </Hyperlink>
+                </TextBlock>
+
             </StackPanel>
         </Border>
     </Grid>

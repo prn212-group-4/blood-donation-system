@@ -5,6 +5,7 @@ using System.Linq;
 using System.Windows;
 using System.Windows.Input;
 using System.Linq;
+using System.Windows.Media.Animation;
 
 namespace BloodDonationSystem.UI
 {
@@ -15,6 +16,12 @@ namespace BloodDonationSystem.UI
             InitializeComponent();
         }
 
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            Storyboard sb = (Storyboard)this.Resources["FadeInStoryboard"];
+            sb.Begin(MainPanel);
+        }
+
         private void LoginButton_Click(object sender, RoutedEventArgs e)
         {
             string email = EmailTextBox.Text.Trim();
@@ -22,7 +29,7 @@ namespace BloodDonationSystem.UI
 
             if (string.IsNullOrEmpty(email) || string.IsNullOrEmpty(password))
             {
-                MessageBox.Show("Please enter both email and password.", "Login Failed", MessageBoxButton.OK, MessageBoxImage.Warning);
+                new CustomMessageWindow("Login Failed", "Please enter both email and password.", AlertType.Error).ShowDialog();
                 return;
             }
 
@@ -33,10 +40,10 @@ namespace BloodDonationSystem.UI
 
                 if (account != null)
                 {
-                    MessageBox.Show($"Welcome, {account.Name}!", "Login Success", MessageBoxButton.OK, MessageBoxImage.Information);
+                    this.Hide();
+                    new CustomMessageWindow("Welcome", $"Hi {account.Name}!", AlertType.Success).ShowDialog();
 
                     Window nextWindow;
-
                     switch (account.Role.ToLower())
                     {
                         case "staff":
@@ -46,19 +53,20 @@ namespace BloodDonationSystem.UI
                             nextWindow = new MemberWindow(account);
                             break;
                         default:
-                            MessageBox.Show("Unknown role. Access denied.", "Login Failed", MessageBoxButton.OK, MessageBoxImage.Error);
+                            new CustomMessageWindow("Login Failed", "Invalid email or password.", AlertType.Error).ShowDialog();
                             return;
                     }
 
                     nextWindow.Show();
-                    this.Close();
                 }
                 else
                 {
-                    MessageBox.Show("Invalid email or password.", "Login Failed", MessageBoxButton.OK, MessageBoxImage.Error);
+                    new CustomMessageWindow("Login Failed", "Invalid email or password.", AlertType.Error).ShowDialog();
                 }
             }
         }
+
+
 
 
         private void RegisterText_MouseDown(object sender, MouseButtonEventArgs e)
@@ -81,6 +89,13 @@ namespace BloodDonationSystem.UI
                 EmailTextBox.Text = "Email";
                 EmailTextBox.Foreground = System.Windows.Media.Brushes.Gray;
             }
+        }
+
+        private void RegisterLink_Click(object sender, RoutedEventArgs e)
+        {
+            RegisterWindow registerWindow = new RegisterWindow();
+            registerWindow.Show();
+            this.Close();
         }
     }
 }
