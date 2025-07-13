@@ -105,3 +105,5 @@ D:\prn-project\BloodDonationSystem\BloodDonationSystem.UI\obj\Debug\net8.0-windo
 D:\prn-project\BloodDonationSystem\BloodDonationSystem.UI\obj\Debug\net8.0-windows\StaffExtractDetail.baml
 D:\prn-project\BloodDonationSystem\BloodDonationSystem.UI\obj\Debug\net8.0-windows\StaffExtract.baml
 D:\prn-project\BloodDonationSystem\BloodDonationSystem.UI\obj\Debug\net8.0-windows\StaffExtract.g.cs
+D:\prn-project\BloodDonationSystem\BloodDonationSystem.UI\obj\Debug\net8.0-windows\StaffBloodStorage.baml
+D:\prn-project\BloodDonationSystem\BloodDonationSystem.UI\obj\Debug\net8.0-windows\StaffBloodStorage.g.cs

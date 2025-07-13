@@ -60,7 +60,7 @@ namespace BloodDonationSystem.UI {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/BloodDonationSystem.UI;component/staffextract.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/BloodDonationSystem.UI;V1.0.0.0;component/staffextract.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\StaffExtract.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

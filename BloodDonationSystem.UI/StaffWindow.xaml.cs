@@ -36,7 +36,11 @@ namespace BloodDonationSystem.UI
             extractWindow.ShowDialog();
         }
 
-
+        private void ViewBloodStorage_Click(object sender, RoutedEventArgs e)
+        {
+            var window = new StaffBloodStorage();
+            window.ShowDialog();
+        }
 
     }
 }
