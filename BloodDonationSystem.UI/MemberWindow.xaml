@@ -2,106 +2,88 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="Member Panel"
-        Height="700" Width="1000"
+        Height="700" Width="1200"
         WindowStartupLocation="CenterScreen"
         Background="#F5F5F5"
         ResizeMode="CanResize">
 
+    <Window.Resources>
+        <DropShadowEffect x:Key="DropShadow" BlurRadius="15" ShadowDepth="5" Color="#888" Opacity="0.3"/>
+
+        <Style x:Key="CardButtonStyle" TargetType="Button">
+            <Setter Property="Margin" Value="0"/>
+            <Setter Property="Padding" Value="15"/>
+            <Setter Property="Height" Value="90"/>
+            <Setter Property="Width" Value="260"/>
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Background" Value="Transparent"/>
+        </Style>
+    </Window.Resources>
+
     <Grid>
         <Border Background="White"
                 Margin="40"
-                CornerRadius="10"
+                CornerRadius="12"
                 Padding="40"
-                Effect="{DynamicResource DropShadow}">
-            <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Width="400">
-                <TextBlock Text="Welcome to the Blood Donation System!"
+                Effect="{StaticResource DropShadow}">
+            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+
+                <!-- Câu chào -->
+                <TextBlock x:Name="WelcomeText"
+                           Text="👋 Welcome back, Member!"
                            FontSize="24"
-                           FontWeight="SemiBold"
+                           FontWeight="Bold"
+                           Foreground="#D32F2F"
+                           TextAlignment="Center"
+                           Margin="0 0 0 10"/>
+
+                <!-- Tiêu đề -->
+                <TextBlock Text="Blood Donation Member Panel"
+                           FontSize="28"
+                           FontWeight="Bold"
                            Foreground="#C62828"
                            TextAlignment="Center"
-                           TextWrapping="Wrap"
-                           Margin="0 10"/>
-                <TextBlock Text="We're glad to have you here."
+                           Margin="0 0 0 10"/>
+                <TextBlock Text="Access blood requests, appointments, and donation history easily."
                            FontSize="16"
                            Foreground="#555"
                            TextAlignment="Center"
-                           Margin="0 5"/>
+                           Margin="0 0 30 10"/>
 
-                <!-- Nút View Blood Request -->
-                <Button Content="View Blood Request"
-                        Width="250"
-                        Height="45"
-                        Margin="0 20"
-                        Click="ViewBloodRequestButton_Click"
-                        Cursor="Hand"
-                        FontSize="16"
-                        FontWeight="SemiBold">
-                    <Button.Template>
-                        <ControlTemplate TargetType="Button">
-                            <Border Background="{TemplateBinding Background}"
-                                    CornerRadius="8"
-                                    Padding="10"
-                                    SnapsToDevicePixels="True"
-                                    Effect="{DynamicResource DropShadow}">
-                                <ContentPresenter HorizontalAlignment="Center"
-                                                  VerticalAlignment="Center"
-                                                  RecognizesAccessKey="True"/>
-                            </Border>
-                            <ControlTemplate.Triggers>
-                                <Trigger Property="IsMouseOver" Value="True">
-                                    <Setter Property="Background" Value="#B71C1C"/>
-                                </Trigger>
-                                <Trigger Property="IsPressed" Value="True">
-                                    <Setter Property="Background" Value="#9A0007"/>
-                                </Trigger>
-                            </ControlTemplate.Triggers>
-                        </ControlTemplate>
-                    </Button.Template>
-                    <Button.Background>
-                        <SolidColorBrush Color="#C62828"/>
-                    </Button.Background>
-                    <Button.Foreground>
-                        <SolidColorBrush Color="White"/>
-                    </Button.Foreground>
-                </Button>
-                <!-- Nút View Appointment -->
-                <Button Content="View My Appointments"
-        Width="250"
-        Height="45"
-        Margin="0 0 0 10"
-        Click="ViewAppointmentButton_Click"
-        Cursor="Hand"
-        FontSize="16"
-        FontWeight="SemiBold">
-                    <Button.Template>
-                        <ControlTemplate TargetType="Button">
-                            <Border Background="{TemplateBinding Background}"
-                    CornerRadius="8"
-                    Padding="10"
-                    SnapsToDevicePixels="True"
-                    Effect="{DynamicResource DropShadow}">
-                                <ContentPresenter HorizontalAlignment="Center"
-                                  VerticalAlignment="Center"
-                                  RecognizesAccessKey="True"/>
-                            </Border>
-                            <ControlTemplate.Triggers>
-                                <Trigger Property="IsMouseOver" Value="True">
-                                    <Setter Property="Background" Value="#B71C1C"/>
-                                </Trigger>
-                                <Trigger Property="IsPressed" Value="True">
-                                    <Setter Property="Background" Value="#9A0007"/>
-                                </Trigger>
-                            </ControlTemplate.Triggers>
-                        </ControlTemplate>
-                    </Button.Template>
-                    <Button.Background>
-                        <SolidColorBrush Color="#C62828"/>
-                    </Button.Background>
-                    <Button.Foreground>
-                        <SolidColorBrush Color="White"/>
-                    </Button.Foreground>
-                </Button>
+                <!-- Các nút điều hướng -->
+                <WrapPanel HorizontalAlignment="Center">
+                    <!-- View Blood Request -->
+                    <Border Background="#EC407A" CornerRadius="12" Margin="10">
+                        <Button Style="{StaticResource CardButtonStyle}"
+                                Content="📋  View Blood Request"
+                                Click="ViewBloodRequestButton_Click"/>
+                    </Border>
 
+                    <!-- View Appointments -->
+                    <Border Background="#42A5F5" CornerRadius="12" Margin="10">
+                        <Button Style="{StaticResource CardButtonStyle}"
+                                Content="📅  View My Appointments"
+                                Click="ViewAppointmentButton_Click"/>
+                    </Border>
+
+                    <!-- Donation History (mới) -->
+                    <Border Background="#66BB6A" CornerRadius="12" Margin="10">
+                        <Button Style="{StaticResource CardButtonStyle}"
+                                Content="💉  Donation History"
+                                Click="DonationHistory_Click"/>
+                    </Border>
+                </WrapPanel>
+
+                <!-- Hiển thị ngày -->
+                <TextBlock x:Name="TodayText"
+                           FontSize="14"
+                           Foreground="Gray"
+                           HorizontalAlignment="Center"
+                           Margin="0 30 0 0"/>
 
             </StackPanel>
         </Border>
