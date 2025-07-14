@@ -8,6 +8,9 @@
     <Compile Update="CreateBloodRequest.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="CustomMessageWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="LoginWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -21,6 +24,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="QuestionManagement.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="RegisterWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="StaffAppointmentManagement.xaml.cs">
