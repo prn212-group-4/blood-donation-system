@@ -7,10 +7,11 @@ namespace BloodDonationSystem.UI
     {
         private readonly Account _currentStaff;
 
-        public StaffWindow(Account staff)
+        public StaffWindow(Account account)
         {
             InitializeComponent();
-            _currentStaff = staff;
+            WelcomeText.Text = $"👋 Welcome back, {account.Name}!";
+            CurrentTimeText.Text = $"Today: {DateTime.Now.ToString("dddd, dd MMM yyyy - HH:mm")}";
         }
 
         private void CreateBloodRequest_Click(object sender, RoutedEventArgs e)
